@@ -1,9 +1,15 @@
 <?php return array(
     'root' => array(
         'name' => 'laravel/lumen',
+<<<<<<< HEAD
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
         'reference' => '446c9d6b39dbc99d56bad0b366a36806bfa7c39d',
+=======
+        'pretty_version' => '1.0.0+no-version-set',
+        'version' => '1.0.0.0',
+        'reference' => NULL,
+>>>>>>> 03e80bb7cee03790254f25c49acf12518c14dd32
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -380,9 +386,15 @@
             ),
         ),
         'laravel/lumen' => array(
+<<<<<<< HEAD
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
             'reference' => '446c9d6b39dbc99d56bad0b366a36806bfa7c39d',
+=======
+            'pretty_version' => '1.0.0+no-version-set',
+            'version' => '1.0.0.0',
+            'reference' => NULL,
+>>>>>>> 03e80bb7cee03790254f25c49acf12518c14dd32
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
