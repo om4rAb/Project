@@ -1,8 +1,8 @@
 <?php return array(
     'root' => array(
         'name' => 'laravel/lumen',
-        'pretty_version' => 'v10.0.0',
-        'version' => '10.0.0.0',
+        'pretty_version' => '1.0.0+no-version-set',
+        'version' => '1.0.0.0',
         'reference' => NULL,
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
@@ -16,6 +16,15 @@
             'reference' => '0ad82ce168c82ba30d1c01ec86116ab52f589478',
             'type' => 'library',
             'install_path' => __DIR__ . '/../brick/math',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'classpreloader/classpreloader' => array(
+            'pretty_version' => '4.2.0',
+            'version' => '4.2.0.0',
+            'reference' => 'af9284543aedb45ed58359374918141c0ac7ae34',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../classpreloader/classpreloader',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -75,6 +84,15 @@
             'install_path' => __DIR__ . '/../fakerphp/faker',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'flipbox/lumen-generator' => array(
+            'pretty_version' => '9.2.0',
+            'version' => '9.2.0.0',
+            'reference' => '95b88d1be59e0936407d04e3271ce819fefa06e3',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../flipbox/lumen-generator',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'fruitcake/php-cors' => array(
             'pretty_version' => 'v1.2.0',
@@ -362,8 +380,8 @@
             ),
         ),
         'laravel/lumen' => array(
-            'pretty_version' => 'v10.0.0',
-            'version' => '10.0.0.0',
+            'pretty_version' => '1.0.0+no-version-set',
+            'version' => '1.0.0.0',
             'reference' => NULL,
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
@@ -446,7 +464,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../nikic/php-parser',
             'aliases' => array(),
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'nunomaduro/termwind' => array(
             'pretty_version' => 'v1.15.1',
@@ -580,8 +598,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0|3.0',
-                1 => '3.0.0',
+                0 => '3.0.0',
+                1 => '1.0|2.0|3.0',
             ),
         ),
         'psr/simple-cache' => array(
@@ -598,6 +616,15 @@
             'provided' => array(
                 0 => '1.0|2.0|3.0',
             ),
+        ),
+        'psy/psysh' => array(
+            'pretty_version' => 'v0.11.17',
+            'version' => '0.11.17.0',
+            'reference' => '3dc5d4018dabd80bceb8fe1e3191ba8460569f0a',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../psy/psysh',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'ramsey/collection' => array(
             'pretty_version' => '2.0.0',
