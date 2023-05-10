@@ -9,7 +9,18 @@ class Commandes_trace extends Model
     //
     protected $table= "commandes_trace";
     protected $fillable= [
-        "IdCommandeTrace",	"IdClient",	"Created_at",	"IdStatus",	"IdCommande"	
+        "IdCommandeTrace","Created_at","TypeStatus"	
 
     ];
+
+
+    function getClient(){
+
+        return $this->belongsTo(Client::class ,"IdCommandeTrace" );
+    }
+
+    public function getCommandes()
+    {
+        return $this->belongsTo(Commandes::class,"commandes_trace");
+    }
 }

@@ -11,4 +11,8 @@ class Products extends Model
     protected $fillable= [
         "IdProduct"	,"NamePr",	"PricePr",	"QteStockPr",	"IdImage"	
     ];
+
+    public function getCommandes(){
+        return $this->belongsToMany(Commandes::class,"Product_cate","IdProduct","IdCommande");
+    }
 }

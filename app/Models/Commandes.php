@@ -15,11 +15,26 @@ class Commandes extends Model
 
     public function getClient()
     {
-        return $this->belongsToMany(Client::class );
+        return $this->belongsToMany(Client::class,"client_command","IdClient","IdCommande" );
     }
 
-    public function CommandeTrace()
+    public function getCommandeTrace()
     {
-        return $this->hasOne(Commandes_trace::class);
+        return $this->hasMany(Commandes_trace::class,"commandes_trace");
     }
+
+    public function getCurrency (){
+
+        return $this->hasOne(Currency::class,"IdCommande");
+    }
+
+    public function getProduct(){
+        return $this->belongsToMany(Products::class,"Product_cate","IdProduct","IdCommande");
+    }
+
+    public function getVille (){
+
+        return $this->hasOne(Ville::class,"IdCommande");
+    }
+
 }

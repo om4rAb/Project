@@ -12,7 +12,7 @@ class Currency extends Model
 
 
     protected $fillable= [
-    "IdCurrency",	"NameCurr",	"CountryCurr",	"IdCommande",	"IdClient"
+    "IdCurrency",	"NameCurr",	"CountryCurr"
     ];
 
  
@@ -20,14 +20,14 @@ class Currency extends Model
 // relation between currency and Client
 public function client (){
 
-    return $this->hasMany(Client::class  );
+    return $this->belongsToMany(Client::class,"IdClient"  );
 }
 
 
 // relation between currency and Commande
-public function Command (){
+public function Commandes (){
 
-    return $this->hasMany(Commandes::class  );
+    return $this->belongsToMany(Commandes::class,"IdCommande");
 }
 
 

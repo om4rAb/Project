@@ -9,13 +9,13 @@ class Coupon extends Model
     //
     protected $table= "coupons";
     protected $fillable= [
-        "IdCoupon",	"CodeCoupon",	"PourcentageCp",	"IdClient"	
+        "IdCoupon",	"CodeCoupon",	"PourcentageCp"	
     ];
 
 // relation between Coupon and CLient
 function getCLient(){
 
-    return $this->belongsTo(Client::class );
+    return $this->belongsTo(Client::class,"IdCoupon" );
 }
 
 // relation between Coupon and Promo
