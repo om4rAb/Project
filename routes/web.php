@@ -21,3 +21,6 @@ $router->get('/', function () use ($router) {
 $router->get('test[/{id}]', function ($id=10) {
     return 'Welcome to laravel luman '.$id;
 });
+
+
+$router->get("/testcon" , "testController@showdata");

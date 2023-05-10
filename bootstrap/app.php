@@ -23,16 +23,11 @@ $app = new Laravel\Lumen\Application(
     dirname(__DIR__)
 );
 $app->register(Flipbox\LumenGenerator\LumenGeneratorServiceProvider::class);
-<<<<<<< HEAD
-// $app->withFacades();
 
- $app->withEloquent();
-=======
 
 // $app->withFacades();
 
 $app->withEloquent();
->>>>>>> 03e80bb7cee03790254f25c49acf12518c14dd32
 
 /*
 |--------------------------------------------------------------------------
