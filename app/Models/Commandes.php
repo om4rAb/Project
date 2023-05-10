@@ -15,11 +15,14 @@ class Commandes extends Model
 
     public function getClient()
     {
-        return $this->belongsToMany(Client::class );
+        return $this->belongsToMany(Client::class ,"client_command","IdClient","IdCommande");
     }
 
     public function CommandeTrace()
     {
         return $this->hasOne(Commandes_trace::class);
+    }
+    function getProduct(){
+        return $this->belongsToMany(Product::class ,"contenir","IdCommande","IdProduct " ,  )->withpivot("quantité");
     }
 }

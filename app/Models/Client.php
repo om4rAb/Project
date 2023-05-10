@@ -13,20 +13,20 @@ class Client extends Model
     protected $fillable= [ 
         "IdClient"	,"FirstNameC"	,"LastNameC",	"AdressC",	"TeleC",
         "CityC",	"CountryC",	"UserNameC",	"EmailC",	"PasswordC",	
-        "IdCommande",	"IdLivraison"        
+        "IdCommmandeTrace",	"IdCoupon"   
     ];
 
 // relation between client and order(commande)
     function getCommandes(){
 
-        return $this->belongsToMany(Commandes::class , "client_command");
+        return $this->belongsToMany(Commandes::class , "client_command","IdClient","IdCommande");
     }
 
 
 // relation between client and coupon
 function getCoupon(){
 
-    return $this->hasMany(Coupon::class );
+    return $this->hasOne(Coupon::class );
 }
 
 // relation between client and currency
