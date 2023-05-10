@@ -12,6 +12,7 @@ class Commandes extends Model
 
     protected $fillable= [ "IdCommande", "DateCmd",	"prixTotale"	];
 
+// relation mabin comaande w client
 
     public function getClient()
     {
@@ -29,12 +30,20 @@ class Commandes extends Model
     }
 
     public function getProduct(){
+
         return $this->belongsToMany(Products::class,"Product_cate","IdProduct","IdCommande");
     }
-
+// Relation between commande and vile
     public function getVille (){
 
-        return $this->hasOne(Ville::class,"IdCommande");
+        return $this->belongsTo(Ville::class, "IdCommande" );
     }
+
+// Relation between commande and livreur
+public function getLivreur(){
+
+    return $this->belongsToMany(Livreur::class , "livraison" , "IdCommande" , "IdLivreur")->withPivot("DateEst" , "AdressL");
+}
+
 
 }

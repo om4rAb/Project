@@ -10,11 +10,13 @@ class Ville extends Model
     protected $primaryKey="IdVille";
     protected $fillable=['NameVille'];
 
+// relation between ville and commande
     public function getCommandes (){
 
-        return $this->belongsToMany(Commandes::class,"IdCommande");
+        return $this->hasMany(Commandes::class,"IdCommande");
     }
-
+    
+// relation between ville and region
     public function getRegion(){
         return $this->belongsTo(Region::class,"IdRegion");
     }

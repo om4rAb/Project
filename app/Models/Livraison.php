@@ -9,4 +9,6 @@ class Livraison extends Model
     //
     protected $table= "livraisons";
     protected $fillable= ["IdLivraison",	"DateEst",	"AdresseL",	"IdCommande"	];
+
+    
 }

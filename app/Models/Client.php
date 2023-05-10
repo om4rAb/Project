@@ -14,8 +14,9 @@ class Client extends Model
         "IdClient"	,"FirstNameC"	,"LastNameC",	"AdressC",	"TeleC",
         "CityC",	"CountryC",	"UserNameC",	"EmailC",	"PasswordC"        
     ];
-    function getCommandes(){
 
+// relation mabin client wa commande :
+    function getCommandes(){
 
         return $this->belongsToMany(Commandes::class ,"client_command","IdClient","IdCommande");
 
@@ -34,7 +35,6 @@ function getCurrency(){
 }
 
 function getCommandtrace(){
-
     return $this->hasMany("commandes_trace"::class ,"IdCommandeTrace" );
 }
 

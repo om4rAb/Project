@@ -10,7 +10,9 @@ class Region extends Model
     protected $primaryKey="IdRegion";
     protected $fillable=['DescripionR'];
 
-    public function getRegion(){
-        return $this->hasMany(Ville::class,"IdRegion");
+// relation between region and image
+    public function getVille(){
+        
+        return $this->hasMany(Ville::class, "IdRegion");
     }
 }

@@ -8,6 +8,7 @@ class Commandes_trace extends Model
 {
     //
     protected $table= "commandes_trace";
+    
     protected $fillable= [
         "IdCommandeTrace","Created_at","TypeStatus"	
 
