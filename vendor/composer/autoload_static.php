@@ -28,6 +28,7 @@ class ComposerStaticInit071e18539842ae287ac36ec63ffdcafb
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         'bee9632da3ca00a99623b9c35d0c4f8b' => __DIR__ . '/..' . '/laravel/lumen-framework/src/helpers.php',
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
+        '3c3a02bc9945aa3571024986c07a1e55' => __DIR__ . '/..' . '/rinvex/countries/src/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -72,6 +73,7 @@ class ComposerStaticInit071e18539842ae287ac36ec63ffdcafb
         ),
         'R' => 
         array (
+            'Rinvex\\Country\\' => 15,
             'Ramsey\\Uuid\\' => 12,
             'Ramsey\\Collection\\' => 18,
         ),
@@ -273,6 +275,10 @@ class ComposerStaticInit071e18539842ae287ac36ec63ffdcafb
         'StellaMaris\\Clock\\' => 
         array (
             0 => __DIR__ . '/..' . '/stella-maris/clock/src',
+        ),
+        'Rinvex\\Country\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/rinvex/countries/src',
         ),
         'Ramsey\\Uuid\\' => 
         array (
@@ -522,6 +528,7 @@ class ComposerStaticInit071e18539842ae287ac36ec63ffdcafb
         'App\\Events\\Event' => __DIR__ . '/../..' . '/app/Events/Event.php',
         'App\\Events\\ExampleEvent' => __DIR__ . '/../..' . '/app/Events/ExampleEvent.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\AuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/AuthController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\ExampleController' => __DIR__ . '/../..' . '/app/Http/Controllers/ExampleController.php',
         'App\\Http\\Controllers\\testController' => __DIR__ . '/../..' . '/app/Http/Controllers/testController.php',
@@ -4250,6 +4257,11 @@ class ComposerStaticInit071e18539842ae287ac36ec63ffdcafb
         'Ramsey\\Uuid\\UuidInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/UuidInterface.php',
         'Ramsey\\Uuid\\Validator\\GenericValidator' => __DIR__ . '/..' . '/ramsey/uuid/src/Validator/GenericValidator.php',
         'Ramsey\\Uuid\\Validator\\ValidatorInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/Validator/ValidatorInterface.php',
+        'Rinvex\\Country\\Country' => __DIR__ . '/..' . '/rinvex/countries/src/Country.php',
+        'Rinvex\\Country\\CountryLoader' => __DIR__ . '/..' . '/rinvex/countries/src/CountryLoader.php',
+        'Rinvex\\Country\\CountryLoaderException' => __DIR__ . '/..' . '/rinvex/countries/src/CountryLoaderException.php',
+        'Rinvex\\Country\\CurrencyLoader' => __DIR__ . '/..' . '/rinvex/countries/src/CurrencyLoader.php',
+        'Rinvex\\Country\\Providers\\CountryServiceProvider' => __DIR__ . '/..' . '/rinvex/countries/src/Providers/CountryServiceProvider.php',
         'SebastianBergmann\\CliParser\\AmbiguousOptionException' => __DIR__ . '/..' . '/sebastian/cli-parser/src/exceptions/AmbiguousOptionException.php',
         'SebastianBergmann\\CliParser\\Exception' => __DIR__ . '/..' . '/sebastian/cli-parser/src/exceptions/Exception.php',
         'SebastianBergmann\\CliParser\\OptionDoesNotAllowArgumentException' => __DIR__ . '/..' . '/sebastian/cli-parser/src/exceptions/OptionDoesNotAllowArgumentException.php',

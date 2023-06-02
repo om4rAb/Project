@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Tymon\JWTAuth\Facades\JWTAuth;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -20,19 +21,32 @@ class AuthController extends Controller
     }
 
 
-
     public function register(Request $request)
     { 
         // Create new user
         try {
+            $existUser = User::where('email', $request->email)->first();
+
+            // check email si exist
+            if($existUser){
+                return response()->json(['status' => 'error', 'message' =>"Email already exists"]);
+            }
             $user = new User();
             $user->FirstNameC = $request->FirstNameC;
+            // $user->LastNameC = $request->LastNameC;
+            // $user->UserNameC = $request->UserNameC;
+            // $user->AdressC = $request->AdressC;
+            // $user->CityC = $request->CityC;
+            // $user->TeleC = $request->TeleC;
+            // $user->CountryC = $request->CountryC;
             $user->email = $request->email;
             $user->password = app('hash')->make($request->password);
-
-            if ($user->save()) {
-                return $this->login($request);
+            $user->save();
+            if($user->save())
+            {
+                return response()->json(['status' => 'You have registered succefully']);
             }
+
         } catch (\Exception $e) {
             return response()->json(['status' => 'error', 'message' => $e->getMessage()]);
         }
@@ -51,6 +65,7 @@ class AuthController extends Controller
         if (! $token = auth()->attempt($credentials)) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
+       
 
         return $this->respondWithToken($token);
     }
@@ -62,6 +77,8 @@ class AuthController extends Controller
      */
     public function me()
     {
+        $user = auth()->user();
+         
         return response()->json(auth()->user());
     }
 
@@ -99,7 +116,19 @@ class AuthController extends Controller
         return response()->json([
             'access_token' => $token,
             'token_type' => 'bearer',
-            'expires_in' => auth::factory()->getTTL() * 60
+            'expires_in' => auth::factory()->getTTL() * 60 ,
         ]);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+

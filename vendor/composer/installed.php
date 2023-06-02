@@ -683,6 +683,15 @@
                 0 => '4.7.4',
             ),
         ),
+        'rinvex/countries' => array(
+            'pretty_version' => 'v9.0.1',
+            'version' => '9.0.1.0',
+            'reference' => '0fdccd0e37bc2f53ae93dda7bbb498189f2e4e22',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../rinvex/countries',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'sebastian/cli-parser' => array(
             'pretty_version' => '2.0.0',
             'version' => '2.0.0.0',
