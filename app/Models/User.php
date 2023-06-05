@@ -22,7 +22,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     protected $table = "users";
     protected $fillable = [
          "FirstNameC"	,"LastNameC",	"AdressC",	"TeleC",
-        "CityC",	"CountryC",	"UserNameC",	"email",	"password"       ];
+    	"CountryC",	"email",	"password"       ];
 
     /**
      * The attributes excluded from the model's JSON form.

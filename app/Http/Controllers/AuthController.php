@@ -19,6 +19,24 @@ class AuthController extends Controller
         $this->middleware('auth:api', ['except' => ['login' , 'register']]);
     }
 
+    public function register(Request $request)
+    {    
+        $user = new User();
+        $user->FirstNamC = $request->FirstNamC;
+        $user->LastNamC = $request->LastNamC;
+        $user->email = $request->email;
+        $user->password = app('hash')->make($request->password);
+        $user->CountryC = $request->CountryC;
+        $user->TeleC = $request->TeleC;
+        $user->AdressC = $request->AdressC;
+
+        // Save user in the db
+        if($user->save());{
+            return response()->json(['message' => 'User registered successfully'], 201);
+        }
+    }
+    
+
 
     /**
      * Get a JWT via given credentials.
