@@ -2,6 +2,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Http\Request;
 
 class CorsMiddleware
 {
@@ -12,7 +13,7 @@ class CorsMiddleware
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle(Request $request, Closure $next)
     {
         $headers = [
             'Access-Control-Allow-Origin'      => '*',
@@ -32,6 +33,7 @@ class CorsMiddleware
         {
             $response->header($key, $value);
         }
+
 
         return $response;
     }

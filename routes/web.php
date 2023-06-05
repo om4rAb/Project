@@ -17,13 +17,6 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-// optional param between []
-$router->get('test[/{id}]', function ($id=10) {
-    return 'Welcome to laravel luman '.$id;
-});
-
-
-$router->get("/testcon" , "testController@showdata");
 
 $router->group(['prefix' => 'api'], function () use ($router) {
     $router->post('/register', 'AuthController@register');
@@ -31,21 +24,42 @@ $router->group(['prefix' => 'api'], function () use ($router) {
 
     $router->group(['middleware' =>'auth' ], function () use ($router) {
         $router->post('/logout', 'AuthController@logout');
+
        
     });
 });
 
 
 
-$router->get('/profile',  ['middleware' => "ExampleMiddleware", 'uses'=>'testController@profile'] );
+
+
+// Countries
+$router->get('/api/countries', 'countriesController@countries');
+
+
+ // check every request
+ $router->group(['middleware' =>'verify' ], function () use ($router) {
+    $router->get('/profile',  'testController@GetProfile' );
+    
+   
+});
 
 
 
 
-// $router->get('/api/countries', 'countriesController@countries');
- 
 
 
 
 
 
+
+
+
+
+
+// $router->get('/api/products', 'productsController@getProducts');
+
+// optional param between []
+$router->get('test[/{id}]', function ($id=10) {
+    return 'Welcome to laravel luman '.$id;
+});

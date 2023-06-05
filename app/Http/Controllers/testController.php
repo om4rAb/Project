@@ -2,20 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Arr;
 
 class testController extends Controller
 {
     //
    
-    public function profile(){
+    public function GetProfile(Request $request){
+        if($request->email==="omar@gmail.com"){
+            $adminInfo=User::where("email" , $request->email)->first(["FirstNameC" , "LastNameC"]);
+            return response()->json(["messgae"=>"Admin" , "AdminInfos"=>$adminInfo ]);
+        }
 
-
-        return "welcome ";
-
+        $userInfo=User::where("email" , $request->email)->first(["FirstNameC" , "LastNameC"]);
+        return response()->json(["messgae"=>"Normal user"  , "AdminInfos"=>$userInfo ]);
     }
 
 
